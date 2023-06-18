@@ -1,8 +1,8 @@
-using DataLayer;
-using Microsoft.AspNetCore.Mvc;
 
 namespace STGenetics.API.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -13,19 +13,15 @@ namespace STGenetics.API.Controllers
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
-        private readonly IGeneticsRepository geneticsRepository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IGeneticsRepository geneticsRepository)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
-            this.geneticsRepository = geneticsRepository;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            var animals = this.geneticsRepository.GetAll();
-
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),

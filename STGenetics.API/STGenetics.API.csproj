@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application\STGenetics.Application.csproj" />
-    <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+    <ProjectReference Include="..\STGenetics.ApplicationServices\STGenetics.ApplicationServices.csproj" />
     <ProjectReference Include="..\STGenetics.Infrastructure.Queries\STGenetics.Infrastructure.Queries.csproj" />
   </ItemGroup>
 

@@ -11,4 +11,8 @@
     <Folder Include="Mapping\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Application\STGenetics.Application.csproj" />
+  </ItemGroup>
+
 </Project>

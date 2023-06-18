@@ -1,12 +1,13 @@
-using DataLayer;
 using Microsoft.Extensions.DependencyInjection;
 using STGenetics.Application.Abstraction.Queries;
+using STGenetics.Application.Abstraction.Services;
+using STGenetics.ApplicationServices;
 using STGenetics.Infrastructure.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddTransient<IGeneticsRepository>(s => new GeneticsRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddTransient<IAnimalApplicationServices, AnimalApplicationServices>();
 builder.Services.AddTransient<IAnimalQueries>(s => new AnimalQueries(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
