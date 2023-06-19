@@ -13,5 +13,7 @@ namespace STGenetics.DomainServices.Abstraction.Repository
         Task<AnimalModel> AddAsync(AnimalModel animal);
 
         Task<AnimalModel> UpdateAsync(AnimalModel animal);
+
+        Task DeleteAsync(int animalId);
     }
 }

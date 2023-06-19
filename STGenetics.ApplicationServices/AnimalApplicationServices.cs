@@ -86,5 +86,17 @@ namespace STGenetics.ApplicationServices
                 return animalResponse;
             }
         }
+
+        public async Task<bool> DeleteAsync(int animalId)
+        {
+            var animalDb = await this.animalQueries.GetAnimalByIdAsync(animalId);
+            if (animalDb == null)
+            {
+                return false;
+            }
+
+            await this.animalDomainServices.DeleteAsync(animalId);
+            return true;
+        }
     }
 }

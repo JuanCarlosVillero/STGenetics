@@ -75,5 +75,17 @@ namespace STGenetics.API.Controllers
             }
             return Ok("Animal with ID " + animal.AnimalId + " was update");
         }
+
+        [HttpDelete("{animalId}")]
+        public async Task<IActionResult> Delete(int animalId)
+        {
+            var result = await animalApplicationServices.DeleteAsync(animalId).ConfigureAwait(false);
+
+            if (!result)
+            {
+                return NotFound();
+            }
+            return Ok("Animal with ID " + animalId + " was delete");
+        }
     }
 }

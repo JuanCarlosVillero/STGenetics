@@ -18,5 +18,7 @@ namespace STGenetics.Application.Abstraction.Services
         Task<int> AddAsync(AnimalRequest animalRequest);
 
         Task<AnimalResponse?> UpdateAsync(AnimalRequest animalRequest);
+
+        Task<bool> DeleteAsync(int animalId);
     }
 }
