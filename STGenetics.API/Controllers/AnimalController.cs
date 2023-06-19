@@ -4,6 +4,7 @@ namespace STGenetics.API.Controllers
     using Microsoft.AspNetCore.Mvc;
     using STGenetics.Application.Abstraction.Services;
     using STGenetics.Application.Request;
+    using System.ComponentModel.DataAnnotations;
 
     [ApiController]
     [Route("api/v1/[controller]")]
@@ -33,6 +34,22 @@ namespace STGenetics.API.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("~/api/v1/[controller]/{animalId}", Name = "GetAnimal")]
+        public async Task<IActionResult> GetAnimalById([Required] int animalId)
+        {
+            var response = await this.animalApplicationServices.GetAnimalByIdAsync(animalId);
+
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return NoContent();
+            }
+        }
+
         [HttpPost("[action]")]
         public async Task<IActionResult> Create(AnimalRequest animalRequest)
         {
@@ -44,6 +61,13 @@ namespace STGenetics.API.Controllers
             }
 
             return Created("Post", "Animal created with ID " + animalId);
+        }
+
+        [HttpPut("[action]")]
+        public async Task<IActionResult> Update(AnimalRequest animalRequest)
+        {
+            await Task.Delay(100);
+            return Ok(animalRequest);
         }
     }
 }

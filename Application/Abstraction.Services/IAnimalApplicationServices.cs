@@ -13,6 +13,8 @@ namespace STGenetics.Application.Abstraction.Services
     {
         Task<IList<AnimalResponse>> GetAllAnimalListAsync();
 
+        Task<AnimalResponse?> GetAnimalByIdAsync(int animalId);
+
         Task<int> Add(AnimalRequest animalRequest);
     }
 }

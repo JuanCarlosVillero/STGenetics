@@ -26,5 +26,11 @@ namespace STGenetics.Infrastructure.Queries
             var result = await this.db.QueryAsync<AnimalResponse>("SELECT * FROM Animal");
             return result.ToList();
         }
+
+        public async Task<AnimalResponse?> GetAnimalByIdAsync(int animalId)
+        {
+            var result = await this.db.QueryAsync<AnimalResponse>("SELECT * FROM Animal WHERE AnimalId = @AnimalId", new {AnimalId = animalId});
+            return result.SingleOrDefault();
+        }
     }
 }

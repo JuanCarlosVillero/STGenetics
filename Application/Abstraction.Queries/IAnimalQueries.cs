@@ -11,5 +11,7 @@ namespace STGenetics.Application.Abstraction.Queries
     public interface IAnimalQueries
     {
         Task<IList<AnimalResponse>> GetAllAnimalListAsync();
+
+        Task<AnimalResponse?> GetAnimalByIdAsync(int animalId);
     }
 }

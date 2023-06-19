@@ -30,6 +30,11 @@ namespace STGenetics.ApplicationServices
             return await this.animalQueries.GetAllAnimalListAsync();
         }
 
+        public async Task<AnimalResponse?> GetAnimalByIdAsync(int animalId)
+        {
+            return await this.animalQueries.GetAnimalByIdAsync(animalId);
+        }
+
         public async Task<int> Add(AnimalRequest animalRequest)
         {
             AnimalModel animalModel = new AnimalModel();
