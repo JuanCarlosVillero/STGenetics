@@ -9,6 +9,8 @@ namespace STGenetics.Domain.Abstraction
 {
     public interface IAnimalDomainServices
     {
-        Task<AnimalModel> Add(AnimalModel animalModel);
+        Task<AnimalModel> AddAsync(AnimalModel animalModel);
+
+        Task<AnimalModel> UpdateAsync(AnimalModel animalModel);
     }
 }

@@ -19,9 +19,14 @@ namespace STGenetics.DomainServices
             this.animalRepository = animalRepository;
         }
 
-        public async Task<AnimalModel> Add(AnimalModel animalModel)
+        public async Task<AnimalModel> AddAsync(AnimalModel animalModel)
         {
-            return await this.animalRepository.Add(animalModel);
+            return await this.animalRepository.AddAsync(animalModel);
+        }
+
+        public async Task<AnimalModel> UpdateAsync(AnimalModel animalModel)
+        {
+            return await this.animalRepository.UpdateAsync(animalModel);
         }
     }
 }

@@ -53,9 +53,9 @@ namespace STGenetics.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Create(AnimalRequest animalRequest)
         {
-            var animalId = await animalApplicationServices.Add(animalRequest).ConfigureAwait(false);
+            var animalId = await animalApplicationServices.AddAsync(animalRequest).ConfigureAwait(false);
 
-            if (animalId == default(int))
+            if (animalId == default)
             {
                 return StatusCode(ERROR500);
             }
@@ -66,8 +66,14 @@ namespace STGenetics.API.Controllers
         [HttpPut("[action]")]
         public async Task<IActionResult> Update(AnimalRequest animalRequest)
         {
-            await Task.Delay(100);
-            return Ok(animalRequest);
+            //await Task.Delay(100);
+            var animal = await animalApplicationServices.UpdateAsync(animalRequest).ConfigureAwait(false);
+
+            if (animal == default)
+            {
+                return NotFound();
+            }
+            return Ok("Animal with ID " + animal.AnimalId + " was update");
         }
     }
 }

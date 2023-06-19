@@ -10,6 +10,8 @@ namespace STGenetics.DomainServices.Abstraction.Repository
 
     public interface IAnimalRepository
     {
-        Task<AnimalModel> Add(AnimalModel animal);
+        Task<AnimalModel> AddAsync(AnimalModel animal);
+
+        Task<AnimalModel> UpdateAsync(AnimalModel animal);
     }
 }

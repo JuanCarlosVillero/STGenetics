@@ -35,7 +35,7 @@ namespace STGenetics.ApplicationServices
             return await this.animalQueries.GetAnimalByIdAsync(animalId);
         }
 
-        public async Task<int> Add(AnimalRequest animalRequest)
+        public async Task<int> AddAsync(AnimalRequest animalRequest)
         {
             AnimalModel animalModel = new AnimalModel();
             animalModel.AnimalId = animalRequest.AnimalId;
@@ -46,7 +46,45 @@ namespace STGenetics.ApplicationServices
             animalModel.Price = animalRequest.Price;
             animalModel.Status = animalRequest.Status;
 
-            animalModel = await this.animalDomainServices.Add(animalModel);
+            animalModel = await this.animalDomainServices.AddAsync(animalModel);
             return animalModel.AnimalId;        }
+
+        public async Task<AnimalResponse?> UpdateAsync(AnimalRequest animalRequest)
+        {
+            var animalDb = await this.animalQueries.GetAnimalByIdAsync(animalRequest.AnimalId);
+            if(animalDb == null)
+            {
+                return animalDb;
+            }
+
+            AnimalModel animalModel = new AnimalModel();
+            animalModel.AnimalId = animalRequest.AnimalId;
+            animalModel.Name = animalRequest.Name;
+            animalModel.Breed = animalRequest.Breed;
+            animalModel.BirthDate = animalRequest.BirthDate;
+            animalModel.Sex = animalRequest.Sex;
+            animalModel.Price = animalRequest.Price;
+            animalModel.Status = animalRequest.Status;
+
+            animalModel = await this.animalDomainServices.UpdateAsync(animalModel);
+
+            if (animalModel == null)
+            {
+                return null;
+            }
+            else
+            {
+                AnimalResponse animalResponse = new AnimalResponse();
+                animalResponse.AnimalId = animalModel.AnimalId;
+                animalResponse.Name = animalModel.Name;
+                animalResponse.Breed = animalModel.Breed;
+                animalResponse.BirthDate = animalModel.BirthDate;
+                animalResponse.Sex = animalModel.Sex;
+                animalResponse.Price = animalModel.Price;
+                animalResponse.Status = animalModel.Status;
+
+                return animalResponse;
+            }
+        }
     }
 }
