@@ -13,4 +13,13 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.138" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\STGenetics.DomainServices\STGenetics.DomainServices.csproj" />
+  </ItemGroup>
+
 </Project>

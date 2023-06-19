@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace STGenetics.Application.Response
+﻿
+namespace STGenetics.Domain.Model
 {
-    public class AnimalResponse
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    public class AnimalModel
     {
         public int AnimalId { get; set; }
         public string Name { get; set; } = default!;
@@ -15,5 +16,7 @@ namespace STGenetics.Application.Response
         public string Sex { get; set; } = default!;
         public decimal Price { get; set; }
         public string Status { get; set; } = default!;
+
+        public bool IsNew => this.AnimalId == default(int);
     }
 }

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application\STGenetics.Application.csproj" />
+    <ProjectReference Include="..\STGenetics.Domain\STGenetics.Domain.csproj" />
   </ItemGroup>
 
 </Project>

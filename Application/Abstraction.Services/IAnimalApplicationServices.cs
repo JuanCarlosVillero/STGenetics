@@ -1,6 +1,7 @@
 ﻿
 namespace STGenetics.Application.Abstraction.Services
 {
+    using STGenetics.Application.Request;
     using STGenetics.Application.Response;
     using System;
     using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace STGenetics.Application.Abstraction.Services
 
     public interface IAnimalApplicationServices
     {
-        Task<IList<AnimalResponse>> GetAllAsync();
+        Task<IList<AnimalResponse>> GetAllAnimalListAsync();
+
+        Task<int> Add(AnimalRequest animalRequest);
     }
 }

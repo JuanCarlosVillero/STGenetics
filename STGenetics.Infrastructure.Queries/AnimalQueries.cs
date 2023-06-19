@@ -21,7 +21,7 @@ namespace STGenetics.Infrastructure.Queries
             this.db = new SqlConnection(connString);
         }
 
-        public async Task<IList<AnimalResponse>> GetAnimalListAsync()
+        public async Task<IList<AnimalResponse>> GetAllAnimalListAsync()
         {
             var result = await this.db.QueryAsync<AnimalResponse>("SELECT * FROM Animal");
             return result.ToList();

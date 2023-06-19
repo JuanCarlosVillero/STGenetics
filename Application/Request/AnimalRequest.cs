@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace STGenetics.Application.Response
+﻿
+namespace STGenetics.Application.Request
 {
-    public class AnimalResponse
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    public class AnimalRequest
     {
         public int AnimalId { get; set; }
         public string Name { get; set; } = default!;

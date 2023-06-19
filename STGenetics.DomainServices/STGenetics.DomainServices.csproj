@@ -13,4 +13,8 @@
     <Folder Include="Response\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\STGenetics.Domain\STGenetics.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
