@@ -11,7 +11,8 @@ namespace STGenetics.Application.Abstraction.Services
 
     public interface IAnimalApplicationServices
     {
-        Task<IList<AnimalResponse>> GetAllAnimalListAsync();
+        Task<IList<AnimalResponse>> GetFilterAnimalsAsync(
+            int animalId, string? name, string? sex, string? status);
 
         Task<AnimalResponse?> GetAnimalByIdAsync(int animalId);
 

@@ -8,7 +8,7 @@ namespace STGenetics.API.Controllers
     using System.ComponentModel.DataAnnotations;
 
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Route("api/v1/[controller]")]
     public class AnimalController : ControllerBase
     {
@@ -22,9 +22,10 @@ namespace STGenetics.API.Controllers
 
         [HttpGet]
         [Route("~/api/v1/[controller]", Name = "GetAllAnimals")]
-        public async Task<IActionResult> GetAllAnimals()
+        public async Task<IActionResult> GetFilterAnimals(int animalId, string? name, string? sex, string? status)
         {
-            var response = await this.animalApplicationServices.GetAllAnimalListAsync();
+            var response = await this.animalApplicationServices.GetFilterAnimalsAsync(
+                animalId, name, sex, status);
 
             if (response != null)
             {

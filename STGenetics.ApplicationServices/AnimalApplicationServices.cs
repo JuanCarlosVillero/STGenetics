@@ -25,9 +25,9 @@ namespace STGenetics.ApplicationServices
             this.animalQueries = animalQueries;
         }
 
-        public async Task<IList<AnimalResponse>> GetAllAnimalListAsync()
+        public async Task<IList<AnimalResponse>> GetFilterAnimalsAsync(int animalId, string? name, string? sex, string? status)
         {
-            return await this.animalQueries.GetAllAnimalListAsync();
+            return await this.animalQueries.GetFilterAnimalsAsync(animalId, name, sex, status);
         }
 
         public async Task<AnimalResponse?> GetAnimalByIdAsync(int animalId)
