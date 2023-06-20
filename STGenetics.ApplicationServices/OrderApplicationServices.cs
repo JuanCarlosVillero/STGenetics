@@ -5,7 +5,9 @@ namespace STGenetics.ApplicationServices
     using STGenetics.Application.Abstraction.Services;
     using STGenetics.Application.Request;
     using STGenetics.Domain.Abstraction;
+    using STGenetics.Domain.ErrorHandling;
     using STGenetics.Domain.Model;
+    using static STGenetics.Domain.ErrorHandling.MessageHandler;
 
     public class OrderApplicationServices : IOrderApplicationServices
     {
@@ -23,6 +25,12 @@ namespace STGenetics.ApplicationServices
             orderModel.Total = orderRequest.Total;
             orderModel.PurchaseDate = orderRequest.PurchaseDate;
             orderModel.Client = orderRequest.Client;
+
+            if (!orderRequest.OrderLinesRequest.Any())
+            {
+                throw new BusinessException(MessageCodes.ORDER_HAS_NO_ORDERLINE_VALIDATION,
+                    GetErrorDescription(MessageCodes.ORDER_HAS_NO_ORDERLINE_VALIDATION));
+            }
 
             foreach (var orderLine in orderRequest.OrderLinesRequest)
             {
