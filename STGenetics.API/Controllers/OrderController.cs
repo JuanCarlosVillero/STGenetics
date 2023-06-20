@@ -1,6 +1,7 @@
 ﻿
 namespace STGenetics.API.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using STGenetics.Application.Abstraction.Services;
     using STGenetics.Application.Request;

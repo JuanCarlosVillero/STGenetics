@@ -51,7 +51,7 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "jwtToken_Auth_API",
+        Title = "Test Web API by Juan C. Villero",
         Version = "v1"
     });
 
