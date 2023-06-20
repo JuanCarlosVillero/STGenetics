@@ -8,7 +8,7 @@ namespace STGenetics.Application.Response
 {
     public class AnimalResponse
     {
-        public int AnimalId { get; set; }
+        public long AnimalId { get; set; }
         public string Name { get; set; } = default!;
         public string Breed { get; set; } = default!;
         public DateTime BirthDate { get; set; }

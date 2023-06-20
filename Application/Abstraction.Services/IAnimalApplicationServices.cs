@@ -12,14 +12,14 @@ namespace STGenetics.Application.Abstraction.Services
     public interface IAnimalApplicationServices
     {
         Task<IList<AnimalResponse>> GetFilterAnimalsAsync(
-            int animalId, string? name, string? sex, string? status);
+            long animalId, string? name, string? sex, string? status);
 
-        Task<AnimalResponse?> GetAnimalByIdAsync(int animalId);
+        Task<AnimalResponse?> GetAnimalByIdAsync(long animalId);
 
-        Task<int> AddAsync(AnimalRequest animalRequest);
+        Task<long> AddAsync(AnimalRequest animalRequest);
 
         Task<AnimalResponse?> UpdateAsync(AnimalRequest animalRequest);
 
-        Task<bool> DeleteAsync(int animalId);
+        Task<bool> DeleteAsync(long animalId);
     }
 }

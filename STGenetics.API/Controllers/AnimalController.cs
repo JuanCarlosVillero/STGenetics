@@ -22,7 +22,7 @@ namespace STGenetics.API.Controllers
 
         [HttpGet]
         [Route("~/api/v1/[controller]", Name = "GetAllAnimals")]
-        public async Task<IActionResult> GetFilterAnimals(int animalId, string? name, string? sex, string? status)
+        public async Task<IActionResult> GetFilterAnimals(long animalId, string? name, string? sex, string? status)
         {
             var response = await this.animalApplicationServices.GetFilterAnimalsAsync(
                 animalId, name, sex, status);
@@ -39,7 +39,7 @@ namespace STGenetics.API.Controllers
 
         [HttpGet]
         [Route("~/api/v1/[controller]/{animalId}", Name = "GetAnimal")]
-        public async Task<IActionResult> GetAnimalById([Required] int animalId)
+        public async Task<IActionResult> GetAnimalById([Required] long animalId)
         {
             var response = await this.animalApplicationServices.GetAnimalByIdAsync(animalId);
 
@@ -80,7 +80,7 @@ namespace STGenetics.API.Controllers
         }
 
         [HttpDelete("{animalId}")]
-        public async Task<IActionResult> Delete(int animalId)
+        public async Task<IActionResult> Delete(long animalId)
         {
             var result = await animalApplicationServices.DeleteAsync(animalId).ConfigureAwait(false);
 

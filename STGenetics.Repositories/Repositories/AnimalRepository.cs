@@ -48,7 +48,7 @@ namespace STGenetics.Repositories.Repositories
             return animalModel;
         }
 
-        public async Task DeleteAsync(int animalId)
+        public async Task DeleteAsync(long animalId)
         {
             await this.db.ExecuteAsync("DELETE FROM Animal WHERE AnimalId = @AnimalId", new { AnimalId = animalId });
         }

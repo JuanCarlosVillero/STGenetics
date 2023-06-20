@@ -25,17 +25,17 @@ namespace STGenetics.ApplicationServices
             this.animalQueries = animalQueries;
         }
 
-        public async Task<IList<AnimalResponse>> GetFilterAnimalsAsync(int animalId, string? name, string? sex, string? status)
+        public async Task<IList<AnimalResponse>> GetFilterAnimalsAsync(long animalId, string? name, string? sex, string? status)
         {
             return await this.animalQueries.GetFilterAnimalsAsync(animalId, name, sex, status);
         }
 
-        public async Task<AnimalResponse?> GetAnimalByIdAsync(int animalId)
+        public async Task<AnimalResponse?> GetAnimalByIdAsync(long animalId)
         {
             return await this.animalQueries.GetAnimalByIdAsync(animalId);
         }
 
-        public async Task<int> AddAsync(AnimalRequest animalRequest)
+        public async Task<long> AddAsync(AnimalRequest animalRequest)
         {
             AnimalModel animalModel = new AnimalModel();
             animalModel.AnimalId = animalRequest.AnimalId;
@@ -87,7 +87,7 @@ namespace STGenetics.ApplicationServices
             }
         }
 
-        public async Task<bool> DeleteAsync(int animalId)
+        public async Task<bool> DeleteAsync(long animalId)
         {
             var animalDb = await this.animalQueries.GetAnimalByIdAsync(animalId);
             if (animalDb == null)

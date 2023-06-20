@@ -23,7 +23,7 @@ namespace STGenetics.Infrastructure.Queries
         }
 
         public async Task<IList<AnimalResponse>> GetFilterAnimalsAsync(
-            int animalId, string? name, string? sex, string? status)
+            long animalId, string? name, string? sex, string? status)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             StringBuilder whereClause = new StringBuilder($@" WHERE 1 = 1");
@@ -57,7 +57,7 @@ namespace STGenetics.Infrastructure.Queries
             return result.ToList();
         }
 
-        public async Task<AnimalResponse?> GetAnimalByIdAsync(int animalId)
+        public async Task<AnimalResponse?> GetAnimalByIdAsync(long animalId)
         {
             var result = await this.db.QueryAsync<AnimalResponse>("SELECT * FROM Animal WHERE AnimalId = @AnimalId", new {AnimalId = animalId});
             return result.SingleOrDefault();

@@ -24,7 +24,7 @@ namespace STGenetics.DomainServices
             return await this.animalRepository.AddAsync(animalModel);
         }
 
-        public async Task DeleteAsync(int animalId)
+        public async Task DeleteAsync(long animalId)
         {
             await this.animalRepository.DeleteAsync(animalId);
         }
