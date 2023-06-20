@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="1000" xml:space="preserve">
-    <value>The Order has no Order Line</value>
+    <value>The Order has no Order Line Items</value>
+  </data>
+  <data name="1001" xml:space="preserve">
+    <value>The animal doest not exist</value>
+  </data>
+  <data name="1003" xml:space="preserve">
+    <value>The Order has repeat Animals</value>
   </data>
 </root>

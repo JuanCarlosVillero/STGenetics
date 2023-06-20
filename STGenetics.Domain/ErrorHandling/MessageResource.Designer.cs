@@ -61,11 +61,29 @@ namespace STGenetics.Domain.ErrorHandling {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Order has no Order Line.
+        ///   Looks up a localized string similar to The Order has no Order Line Items.
         /// </summary>
         internal static string _1000 {
             get {
                 return ResourceManager.GetString("1000", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The animal doest not exist.
+        /// </summary>
+        internal static string _1001 {
+            get {
+                return ResourceManager.GetString("1001", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Order has repeat Animals.
+        /// </summary>
+        internal static string _1003 {
+            get {
+                return ResourceManager.GetString("1003", resourceCulture);
             }
         }
     }

@@ -11,6 +11,16 @@ namespace STGenetics.Domain.ErrorHandling
             {
                 get { return "1000"; }
             }
+
+            public static string ANIMAL_DOES_NO_EXIST_VALIDATION
+            {
+                get { return "1001"; }
+            }
+
+            public static string ORDER_HAS_DUPLICATE_ANIMALS_VALIDATION
+            {
+                get { return "1002"; }
+            }
         }
 
         /// <summary>

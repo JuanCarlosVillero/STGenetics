@@ -19,7 +19,7 @@ namespace STGenetics.Repositories.Repositories
         public async Task<OrderLineModel> AddAsync(OrderLineModel orderLineModel)
         {
             var sql =
-                "INSERT INTO [dbo].[OrderLine]([OrderId], [AnimalId], [Quantity], [TotalLine]) VALUES(@OrderId, @AnimalId, @Quantity, @TotalLine); " +
+                "INSERT INTO [dbo].[OrderLine]([OrderId], [AnimalId], [Quantity], [Discount], [TotalLine]) VALUES(@OrderId, @AnimalId, @Quantity, @Discount, @TotalLine); " +
                 "SELECT CAST(SCOPE_IDENTITY() AS INT)";
 
             var id = await this.db.QueryAsync<int>(sql, orderLineModel);
@@ -39,6 +39,7 @@ namespace STGenetics.Repositories.Repositories
                 "SET    OrderId = @OrderId, " +
                 "       AnimalId = @AnimalId, " +
                 "       Quantity = @Quantity, " +
+                "       Discount = @Discount, " +
                 "       TotalLine = @TotalLine " +
                 "WHERE AnimalId = @AnimalId";
 

@@ -22,14 +22,14 @@ namespace STGenetics.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Create(OrderRequest orderRequest)
         {
-            var orderId = await orderApplicationServices.SaveAsync(orderRequest).ConfigureAwait(false);
+            var orderResponse = await orderApplicationServices.SaveAsync(orderRequest).ConfigureAwait(false);
 
-            if (orderId == default)
+            if (orderResponse.OrderId == default)
             {
                 return StatusCode(ERROR500);
             }
 
-            return Created("Post", "Order created with ID " + orderId);
+            return Created("Post", orderResponse);
         }
     }
 }
