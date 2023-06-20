@@ -7,10 +7,7 @@ namespace STGenetics.ApplicationServices
     using STGenetics.Application.Response;
     using STGenetics.Domain.Abstraction;
     using STGenetics.Domain.Model;
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
 
     public class AnimalApplicationServices: IAnimalApplicationServices

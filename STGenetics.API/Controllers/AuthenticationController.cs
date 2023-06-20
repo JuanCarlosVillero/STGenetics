@@ -1,7 +1,6 @@
 ﻿
 namespace STGenetics.API.Controllers
 {
-    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.IdentityModel.Tokens;
     using STGenetics.Application.Request;

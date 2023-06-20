@@ -4,7 +4,6 @@ namespace STGenetics.Application.Request
     public class OrderRequest
     {
         public long OrderId { get; set; }
-        //public decimal Total { get; set; }
         public DateTime PurchaseDate { get; set; }
         public string Client { get; set; } = default!;
 

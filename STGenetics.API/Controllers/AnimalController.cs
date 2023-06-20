@@ -8,7 +8,7 @@ namespace STGenetics.API.Controllers
     using System.ComponentModel.DataAnnotations;
 
     [ApiController]
-    //[Authorize]
+    [Authorize]
     [Route("api/v1/[controller]")]
     public class AnimalController : ControllerBase
     {

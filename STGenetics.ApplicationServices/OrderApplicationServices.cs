@@ -112,18 +112,14 @@ namespace STGenetics.ApplicationServices
         {
             OrderModel orderModel = new OrderModel();
             orderModel.OrderId = orderRequest.OrderId;
-            //orderModel.Total = orderRequest.Total;
             orderModel.PurchaseDate = orderRequest.PurchaseDate;
             orderModel.Client = orderRequest.Client;
 
             foreach (var orderLine in orderRequest.OrderLinesRequest)
             {
                 OrderLineModel orderLineModel = new OrderLineModel();
-                //orderLineModel.OrderLineId = orderLine.OrderLineId;
-                //orderLineModel.OrderId = orderLine.OrderId;
                 orderLineModel.AnimalId = orderLine.AnimalId;
                 orderLineModel.Quantity = orderLine.Quantity;
-                //orderLineModel.TotalLine = orderLine.TotalLine;
 
                 orderModel.OrderLines.Add(orderLineModel);
             }

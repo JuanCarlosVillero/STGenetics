@@ -4,10 +4,9 @@ namespace STGenetics.API.Controllers
     using Microsoft.AspNetCore.Mvc;
     using STGenetics.Application.Abstraction.Services;
     using STGenetics.Application.Request;
-    using STGenetics.ApplicationServices;
 
     [ApiController]
-    //[Authorize]
+    [Authorize]
     [Route("api/v1/[controller]")]
     public class OrderController : ControllerBase
     {
