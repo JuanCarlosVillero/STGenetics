@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Abstraction.ExternalServices\" />
-    <Folder Include="Abstraction.Repository\" />
     <Folder Include="DataModel\" />
     <Folder Include="Response\" />
   </ItemGroup>

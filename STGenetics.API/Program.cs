@@ -18,6 +18,14 @@ builder.Services.AddTransient<IAnimalApplicationServices, AnimalApplicationServi
 builder.Services.AddTransient<IAnimalDomainServices, AnimalDomainServices>();
 builder.Services.AddTransient<IAnimalQueries>(s => new AnimalQueries(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddTransient<IAnimalRepository>(s => new AnimalRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddTransient<IOrderLineRepository>(s => new OrderLineRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddTransient<IOrderRepository>(serviceProvider => 
+    new OrderRepository(
+        connString: builder.Configuration.GetConnectionString("DefaultConnection"),
+        orderLineRepository: serviceProvider.GetRequiredService<IOrderLineRepository>()
+    )
+);
+
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer(options =>

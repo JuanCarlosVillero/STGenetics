@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="Abstraction.Repositories\" />
     <Folder Include="ErrorHandling\" />
-    <Folder Include="Model\" />
   </ItemGroup>
 
 </Project>

@@ -5,14 +5,11 @@ namespace STGenetics.Repositories.Repositories
     using Dapper;
     using STGenetics.Domain.Model;
     using STGenetics.DomainServices.Abstraction.Repository;
-    using System;
-    using System.Collections.Generic;
     using System.Data;
     using System.Data.SqlClient;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
-    public class AnimalRepository:IAnimalRepository
+    public class AnimalRepository : IAnimalRepository
     {
         private IDbConnection db;
 

@@ -17,6 +17,6 @@ namespace STGenetics.Domain.Model
         public decimal Price { get; set; }
         public string Status { get; set; } = default!;
 
-        public bool IsNew => this.AnimalId == default(int);
+        public bool IsNew => this.AnimalId == default(long);
     }
 }

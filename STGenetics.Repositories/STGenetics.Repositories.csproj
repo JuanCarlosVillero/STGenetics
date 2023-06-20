@@ -10,7 +10,6 @@
     <Folder Include="Data\" />
     <Folder Include="DataModel\" />
     <Folder Include="Mapping\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
