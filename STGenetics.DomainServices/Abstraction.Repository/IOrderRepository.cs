@@ -11,5 +11,7 @@ namespace STGenetics.DomainServices.Abstraction.Repository
         Task<OrderModel> UpdateAsync(OrderModel orderModel);
 
         Task DeleteAsync(long orderId);
+
+        Task<OrderModel> SaveAsync(OrderModel orderModel);
     }
 }

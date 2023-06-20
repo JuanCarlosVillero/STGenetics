@@ -15,7 +15,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddTransient<IAnimalApplicationServices, AnimalApplicationServices>();
+builder.Services.AddTransient<IOrderApplicationServices, OrderApplicationServices>();
 builder.Services.AddTransient<IAnimalDomainServices, AnimalDomainServices>();
+builder.Services.AddTransient<IOrderDomainServices, OrderDomainServices>();
 builder.Services.AddTransient<IAnimalQueries>(s => new AnimalQueries(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddTransient<IAnimalRepository>(s => new AnimalRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddTransient<IOrderLineRepository>(s => new OrderLineRepository(builder.Configuration.GetConnectionString("DefaultConnection")));

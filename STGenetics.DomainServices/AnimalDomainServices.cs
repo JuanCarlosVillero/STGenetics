@@ -4,10 +4,6 @@ namespace STGenetics.DomainServices
     using STGenetics.Domain.Abstraction;
     using STGenetics.Domain.Model;
     using STGenetics.DomainServices.Abstraction.Repository;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
 
     public class AnimalDomainServices: IAnimalDomainServices

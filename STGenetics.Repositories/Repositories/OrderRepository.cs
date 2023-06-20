@@ -49,15 +49,15 @@ namespace STGenetics.Repositories.Repositories
             return orderModel;
         }
 
-        public async void Save(OrderModel orderModel)
+        public async Task<OrderModel> SaveAsync(OrderModel orderModel)
         {
             if(orderModel.IsNew)
             {
-                await this.AddAsync(orderModel);
+                orderModel = await this.AddAsync(orderModel);
             }
             else
             {
-                await this.UpdateAsync(orderModel);
+                orderModel = await this.UpdateAsync(orderModel);
             }
 
             foreach (var orderLineModel in orderModel.OrderLines)
@@ -73,6 +73,8 @@ namespace STGenetics.Repositories.Repositories
                     await this.orderLineRepository.UpdateAsync(orderLineModel);
                 }
             }
+
+            return orderModel;
         }
     }
 }
