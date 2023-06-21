@@ -126,4 +126,7 @@
   <data name="1003" xml:space="preserve">
     <value>The Order has repeat Animals</value>
   </data>
+  <data name="1004" xml:space="preserve">
+    <value>The usser does not exist</value>
+  </data>
 </root>

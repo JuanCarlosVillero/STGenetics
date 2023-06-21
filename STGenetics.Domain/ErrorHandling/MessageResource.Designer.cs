@@ -86,5 +86,14 @@ namespace STGenetics.Domain.ErrorHandling {
                 return ResourceManager.GetString("1003", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The usser does not exist.
+        /// </summary>
+        internal static string _1004 {
+            get {
+                return ResourceManager.GetString("1004", resourceCulture);
+            }
+        }
     }
 }

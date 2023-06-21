@@ -21,6 +21,11 @@ namespace STGenetics.Domain.ErrorHandling
             {
                 get { return "1002"; }
             }
+
+            public static string USER_DOES_NOT_EXIST
+            {
+                get { return "1003"; }
+            }
         }
 
         /// <summary>

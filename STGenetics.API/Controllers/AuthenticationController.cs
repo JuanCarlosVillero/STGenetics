@@ -4,9 +4,11 @@ namespace STGenetics.API.Controllers
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.IdentityModel.Tokens;
     using STGenetics.Application.Request;
+    using STGenetics.Domain.ErrorHandling;
     using System.IdentityModel.Tokens.Jwt;
     using System.Security.Claims;
     using System.Text;
+    using static STGenetics.Domain.ErrorHandling.MessageHandler;
 
     [Route("api/[controller]")]
     [ApiController]
@@ -62,14 +64,21 @@ namespace STGenetics.API.Controllers
             return Ok(tokenToReturn);
         }
 
+        //This in the future should be consulted in the DB
         private UserRequest ValidateUserCredentials(string? userName, string? password)
         {
+            if (!userName.Equals("STGenetic") || !password.Equals("STGenetic"))
+            {
+                throw new BusinessException(MessageCodes.USER_DOES_NOT_EXIST,
+                    GetErrorDescription(MessageCodes.USER_DOES_NOT_EXIST));
+            }
+
             return new UserRequest(
                 1,
                 userName ?? "",
-                "Kevin",
-                "Dockx",
-                "Antwerp");
+                "Juan",
+                "Villero",
+                "Cartagena");
         }
     }
 }
