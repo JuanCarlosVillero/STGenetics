@@ -19,6 +19,11 @@ namespace STGenetics.API.Controllers
             this.orderApplicationServices = orderApplicationServices;
         }
 
+        /// <summary>
+        /// Save an animal purchase in the DataBase and return a Json informing the Id and the total purchase amount.
+        /// </summary>
+        /// <param name="orderRequest"></param>
+        /// <returns></returns>
         [HttpPost("[action]")]
         public async Task<IActionResult> Create(OrderRequest orderRequest)
         {

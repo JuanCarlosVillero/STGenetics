@@ -21,6 +21,11 @@ namespace STGenetics.API.Controllers
                 throw new ArgumentNullException(nameof(configuration));
         }
 
+        /// <summary>
+        /// Generate a Token for the UserName "STGenetic" with Password "STGenetic"
+        /// </summary>
+        /// <param name="authenticationBodyRequest"></param>
+        /// <returns></returns>
         [HttpPost("authenticate")]
         public ActionResult<string> Authenticate(
             AuthenticationBodyRequest authenticationBodyRequest)

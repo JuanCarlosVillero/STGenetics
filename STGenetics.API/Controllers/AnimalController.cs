@@ -20,6 +20,14 @@ namespace STGenetics.API.Controllers
             this.animalApplicationServices = animalApplicationServices;
         }
 
+        /// <summary>
+        /// Filters animals by AnimalId or Name or Sex or Status (ACTIVE or INACTIVE).
+        /// </summary>
+        /// <param name="animalId"></param>
+        /// <param name="name"></param>
+        /// <param name="sex"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("~/api/v1/[controller]", Name = "GetAllAnimals")]
         public async Task<IActionResult> GetFilterAnimals(long animalId, string? name, string? sex, string? status)
@@ -37,6 +45,11 @@ namespace STGenetics.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Get Animal by AnimalId
+        /// </summary>
+        /// <param name="animalId"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("~/api/v1/[controller]/{animalId}", Name = "GetAnimal")]
         public async Task<IActionResult> GetAnimalById([Required] long animalId)
@@ -53,6 +66,11 @@ namespace STGenetics.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Create Animal
+        /// </summary>
+        /// <param name="animalRequest"></param>
+        /// <returns></returns>
         [HttpPost("[action]")]
         public async Task<IActionResult> Create(AnimalRequest animalRequest)
         {
@@ -66,6 +84,11 @@ namespace STGenetics.API.Controllers
             return Created("Post", "Animal created with ID " + animalId);
         }
 
+        /// <summary>
+        /// Update Animal
+        /// </summary>
+        /// <param name="animalRequest"></param>
+        /// <returns></returns>
         [HttpPut("[action]")]
         public async Task<IActionResult> Update(AnimalRequest animalRequest)
         {
@@ -79,6 +102,11 @@ namespace STGenetics.API.Controllers
             return Ok("Animal with ID " + animal.AnimalId + " was update");
         }
 
+        /// <summary>
+        /// Delete Animal
+        /// </summary>
+        /// <param name="animalId"></param>
+        /// <returns></returns>
         [HttpDelete("{animalId}")]
         public async Task<IActionResult> Delete(long animalId)
         {
