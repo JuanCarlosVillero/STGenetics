@@ -28,6 +28,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STGenetics.Repositories", "STGenetics.Repositories\STGenetics.Repositories.csproj", "{08136048-2A41-47A4-95B4-12119410A8C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBaseScripts", "DataBaseScripts", "{29916F17-1052-4A99-8F90-F1C812857EFA}"
+	ProjectSection(SolutionItems) = preProject
+		SQL_Requirement_1.sql = SQL_Requirement_1.sql
+		SQL_Requirement_2.sql = SQL_Requirement_2.sql
+		SQL_Requirement_3.sql = SQL_Requirement_3.sql
+		SQL_Requirement_4.sql = SQL_Requirement_4.sql
+		SQL_Requirement_5.sql = SQL_Requirement_5.sql
+		SQL_Requirement_6.sql = SQL_Requirement_6.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
