@@ -2,6 +2,9 @@
 5)	Create a script to list animals older than 2 years and female, sorted by name.
 */
 
+USE [STGenetics]
+GO
+
 SELECT [AnimalId]
       ,[Name]
       ,[Breed]

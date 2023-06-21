@@ -3,4 +3,4 @@
  1)	Create the "STGenetics" database.
 */
 
-CREATE DATABASE STGeneticsExample
+CREATE DATABASE STGenetics
