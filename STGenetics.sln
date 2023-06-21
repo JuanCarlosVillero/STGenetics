@@ -29,6 +29,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "STGenetics.Repositories", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{0F0B6FFB-360B-4706-8E82-F86831AE9CE6}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\Documents\SQL_Requirement_1.sql = ..\..\..\Documents\SQL_Requirement_1.sql
+		..\..\..\Documents\SQL_Requirement_2.sql = ..\..\..\Documents\SQL_Requirement_2.sql
+		..\..\..\Documents\SQL_Requirement_3.sql = ..\..\..\Documents\SQL_Requirement_3.sql
+		..\..\..\Documents\SQL_Requirement_4.sql = ..\..\..\Documents\SQL_Requirement_4.sql
 		TablesScript.sql = TablesScript.sql
 	EndProjectSection
 EndProject
